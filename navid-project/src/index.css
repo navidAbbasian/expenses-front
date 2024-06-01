@@ -1,0 +1,53 @@
+* {
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Yekan', sans-serif !important;
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('/fonts/eot/iranyekanwebregularfanum.eot');
+    src: url('/fonts/eot/iranyekanwebregularfanum.eot?#iefix')
+            format('embedded-opentype'),
+        url('/fonts/woff/iranyekanwebregularfanum.woff') format('woff'),
+        url('/fonts/.otf') format('opentype'),
+        url('/fonts/ttf/IRANYekanBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    font-display: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 0.2rem;
+    height: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b5b7;
+    border-radius: 10rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #939597;
+}
+
+.leaflet-container {
+    position: absolute;
+    height: 85%;
+    width: 100%;
+}
+
+.swal2-container {
+    z-index: 10000 !important;
+}
+
+.swal2-popup {
+    font-size: 14px !important;
+}

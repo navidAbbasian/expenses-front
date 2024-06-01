@@ -1,0 +1,1 @@
+export const StaleTime = 300000
