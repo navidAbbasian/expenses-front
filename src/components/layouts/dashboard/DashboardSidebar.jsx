@@ -102,7 +102,7 @@ export default function DashboardSidebar(props) {
                             fontSize: '18px',
                         }}
                     >
-                        پنل نوید
+                        پنل هزینه‌ها
                     </Typography>
                     <Button variant="text" onClick={handleDrawerClose}>
                         <Icon

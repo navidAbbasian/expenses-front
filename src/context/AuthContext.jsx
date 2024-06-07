@@ -57,7 +57,7 @@ export function AuthContextProvider({ children }) {
             localStorage.setItem('adminProfile', JSON.stringify(res.data.user));
             Swal.fire({
                 icon: 'success',
-                title: 'شما با موفقیت وارد پنل نوید شدید.',
+                title: 'شما با موفقیت وارد پنل شدید.',
                 showConfirmButton: false,
                 timer: 1500,
             });
@@ -88,7 +88,7 @@ export function AuthContextProvider({ children }) {
             localStorage.setItem('adminProfile', JSON.stringify(res.data.user));
             Swal.fire({
                 icon: 'success',
-                title: 'شما با موفقیت وارد پنل نوید شدید.',
+                title: 'شما با موفقیت وارد پنل شدید.',
                 showConfirmButton: false,
                 timer: 1500,
             });

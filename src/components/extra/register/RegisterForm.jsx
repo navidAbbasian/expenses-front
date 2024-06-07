@@ -43,7 +43,7 @@ const RegisterForm = () => {
         resolver: yupResolver(RegisterValidation),
     });
 
-    console.log("errors", errors)
+    console.log('errors', errors);
 
     return (
         <>
@@ -171,17 +171,14 @@ const RegisterForm = () => {
                     }}
                 >
                     <Typography variant="subtitle1" sx={{ fontSize: '15px' }}>
-                        از قبل اکانت داشتی و اومدی اینجا؟
-                    </Typography>
-                    <Typography variant="subtitle1" sx={{ fontSize: '15px' }}>
-                        خب بکوب روی این{' '}
+                        چنانچه حساب دارید{' '}
                         <Link
                             to="/login"
                             style={{ color: 'blue', fontWeight: 600 }}
                         >
-                            لینک
+                            وارد
                         </Link>{' '}
-                        و وارد حسابت بشو.
+                        شوید.
                     </Typography>
                 </Box>
             </Box>

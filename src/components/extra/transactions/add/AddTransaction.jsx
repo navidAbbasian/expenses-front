@@ -20,8 +20,8 @@ const AddTransaction = ({ openFormModal, setOpenFormModal }) => {
     const [selectedTag, setSelectedTag] = useState(null);
 
     // console.log("selectedTag", selectedTag)
-    console.log('selectedToBank', selectedToBank);
-    console.log('selectedFromBank', selectedFromBank);
+    // console.log('selectedToBank', selectedToBank);
+    // console.log('selectedFromBank', selectedFromBank);
 
     const { reset, setValue, ...formMethods } = useForm({
         resolver: yupResolver(TransactionValidation),

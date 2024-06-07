@@ -10,16 +10,14 @@ import { useEffect, useState } from 'react';
 
 import {
     deleteTransactionReq,
-    tagsListReq,
-    tagsListSearchReq,
     transactionsListReq,
+    transactionsListSearchReq,
 } from '../../../../api/requests';
 import useModalActions from '../../../../hooks/useModalActions';
 import useSearchQuery from '../../../../hooks/useSearchQuery';
 import FormAlert from '../../../shared/alerts/FormAlert';
 import DeleteModal from '../../../shared/modal/DeleteModal';
 import TableContainer from '../../../shared/table/TableContainer';
-import EditTransaction from '../edit/EditTransaction';
 import TransactionsColumns from './TransactionsColumns';
 
 function CustomToolbar() {
@@ -46,24 +44,22 @@ const TransactionsList = () => {
     // hook
     const {
         openDeleteModal,
-        openEditModal,
-        setOpenEditModal,
         handleCloseDeleteModal,
-        handleCloseEditModal,
         itemId,
         handleDelete,
-        handleEdit,
         itemName,
     } = useModalActions();
 
-    // fetch tags
+    // fetch transactions
     const { data, isLoading, isSuccess, isFetching, isPending } = useQuery({
-        queryKey: ['transactions', paginationModel.page + 1],
+        queryKey: ['transactions', paginationModel?.page + 1],
         queryFn: ({ signal }) => {
-            return transactionsListReq(paginationModel.page + 1, signal);
+            return transactionsListReq(paginationModel?.page + 1, signal);
         },
         keepPreviousData: true,
     });
+
+    console.log('data', data);
 
     useEffect(() => {
         if (isSuccess) {
@@ -79,7 +75,7 @@ const TransactionsList = () => {
     const prefetchQuery = (nextPage) => {
         queryClient.prefetchQuery({
             queryKey: ['transactions', nextPage],
-            queryFn: ({ signal }) => tagsListReq(nextPage, signal),
+            queryFn: ({ signal }) => transactionsListReq(nextPage, signal),
         });
     };
 
@@ -99,12 +95,12 @@ const TransactionsList = () => {
     };
 
     // search query
-    const searchFields = ['name'];
+    const searchFields = ['amount'];
 
     const { searchedData, isSearchLoading } = useSearchQuery(
         debouncedSearchTerm,
         true,
-        tagsListSearchReq,
+        transactionsListSearchReq,
         searchFields
     );
 
@@ -114,16 +110,15 @@ const TransactionsList = () => {
             isLoading={isLoading || isSearchLoading}
             handleFilter={handleFilter}
             value={query}
-            placeholder="جست و جو بر اساس عنوان"
+            placeholder="جست و جو بر اساس مقدار"
         >
             <DataGrid
                 slots={{ toolbar: CustomToolbar }}
                 autoHeight
                 getRowId={(row) => row?.id}
-                rows={query == '' ? data?.data?.data : searchedData?.data?.data}
+                rows={query == '' ? data?.data : searchedData?.data}
                 columns={TransactionsColumns({
                     onDelete: handleDelete,
-                    onEdit: handleEdit,
                 })}
                 checkboxSelection
                 disableRowSelectionOnClick
@@ -148,19 +143,6 @@ const TransactionsList = () => {
                         itemId,
                         itemName,
                         setShowConfirmAlert,
-                    }}
-                />
-            ) : (
-                ''
-            )}
-            {openEditModal ? (
-                <EditTransaction
-                    items={{
-                        openEditModal,
-                        setOpenEditModal,
-                        handleCloseEditModal,
-                        itemId,
-                        itemName,
                     }}
                 />
             ) : (

@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import TableActions from '../../../shared/table/TableActions';
 import { Icon } from '@iconify/react';
 
-const TransactionsColumns = ({ onDelete, onEdit }) => {
+const TransactionsColumns = ({ onDelete }) => {
     const columns = [
         {
             minWidth: 190,
@@ -14,19 +14,6 @@ const TransactionsColumns = ({ onDelete, onEdit }) => {
                 return (
                     <Typography noWrap variant="subtitle1">
                         {row?.amount?.toLocaleString()} تومان
-                    </Typography>
-                );
-            },
-        },
-        {
-            minWidth: 250,
-            sortable: true,
-            field: 'fee',
-            headerName: 'اجرت',
-            renderCell: ({ row }) => {
-                return (
-                    <Typography noWrap variant="subtitle1">
-                        {row?.fee?.toLocaleString()} تومان
                     </Typography>
                 );
             },
@@ -123,10 +110,10 @@ const TransactionsColumns = ({ onDelete, onEdit }) => {
             renderCell: ({ row }) => (
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <TableActions
+                        showEditTooltip={false}
                         rowID={row?.id}
-                        itemName={"تراکنش مد نظر"}
+                        itemName={'تراکنش مد نظر'}
                         onDelete={onDelete}
-                        onEdit={onEdit}
                     />
                 </Box>
             ),

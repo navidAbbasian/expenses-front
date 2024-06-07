@@ -48,7 +48,7 @@ const LoginForm = () => {
             <Box sx={{ width: 1 }}>
                 <Box sx={{ mb: 6 }}>
                     <TypographyStyled variant="h5">
-                        به پنل نوید خوش آمدید👋🏻
+                        به پنل مدیریتی هزینه‌ها خوش آمدید👋🏻
                     </TypographyStyled>
                     <Typography variant="body1">
                         لطفا اطلاعات خود را وارد نمایید.
@@ -144,17 +144,14 @@ const LoginForm = () => {
                     }}
                 >
                     <Typography variant="subtitle1" sx={{ fontSize: '15px' }}>
-                        میخوای به پنل نوید وارد بشی ولی حساب نداری؟
-                    </Typography>
-                    <Typography variant="subtitle1" sx={{ fontSize: '15px' }}>
-                        خب بکوب روی این{' '}
+                        چنانچه حساب ندارید روی این{' '}
                         <Link
                             to="/register"
                             style={{ color: 'blue', fontWeight: 600 }}
                         >
                             لینک
                         </Link>{' '}
-                        و حساب بساز.
+                        کلیک کنید.
                     </Typography>
                 </Box>
             </Box>
