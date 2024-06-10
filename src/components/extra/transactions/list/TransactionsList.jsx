@@ -59,8 +59,6 @@ const TransactionsList = () => {
         keepPreviousData: true,
     });
 
-    console.log('data', data);
-
     useEffect(() => {
         if (isSuccess) {
             const { total, to, per_page } = data.data;
@@ -116,7 +114,7 @@ const TransactionsList = () => {
                 slots={{ toolbar: CustomToolbar }}
                 autoHeight
                 getRowId={(row) => row?.id}
-                rows={query == '' ? data?.data : searchedData?.data}
+                rows={query == '' ? data?.data?.data : searchedData?.data?.data}
                 columns={TransactionsColumns({
                     onDelete: handleDelete,
                 })}
