@@ -60,7 +60,6 @@ const RegisterForm = () => {
                                 fullWidth
                                 type="text"
                                 label="نام"
-                                placeholder="admin@gmail.com"
                                 name="name"
                                 error={Boolean(errors.name)}
                                 {...register('name')}
@@ -73,7 +72,7 @@ const RegisterForm = () => {
                             <TextField
                                 fullWidth
                                 label="شماره تلفن"
-                                placeholder="admin@gmail.com"
+                                placeholder="09353722681"
                                 name="number"
                                 error={Boolean(errors.number)}
                                 {...register('number')}
