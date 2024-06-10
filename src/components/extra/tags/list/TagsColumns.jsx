@@ -18,6 +18,19 @@ const TagsColumns = ({ onDelete, onEdit }) => {
             },
         },
         {
+            minWidth: 220,
+            sortable: true,
+            field: 'balance',
+            headerName: 'موجودی',
+            renderCell: ({ row }) => {
+                return (
+                    <Typography noWrap variant="subtitle1">
+                        {row?.TagsTransactionBalance?.toLocaleString()} تومان
+                    </Typography>
+                );
+            },
+        },
+        {
             minWidth: 250,
             sortable: true,
             field: 'description',
