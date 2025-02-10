@@ -1,0 +1,130 @@
+* {
+  font-family: "Yekan", sans-serif !important;
+  direction: rtl;
+}
+
+@font-face {
+  font-family: "Yekan";
+  src: url("/fonts/eot/iranyekanwebregularfanum.eot");
+  src:
+    url("/fonts/eot/iranyekanwebregularfanum.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/woff/iranyekanwebregularfanum.woff") format("woff"),
+    url("/fonts/.otf") format("opentype"),
+    url("/fonts/ttf/IRANYekanBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  font-display: auto;
+}
+
+.swal2-container {
+  z-index: 1301;
+}
+
+.MuiCard-root {
+  box-shadow: 0 0.25rem 0.875rem 0 rgba(38, 43, 67, 0.16);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b3b5b7;
+  border-radius: 10rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #939597;
+}
+
+.glass-bg {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.4px);
+  -webkit-backdrop-filter: blur(1.4px);
+}
+
+.file-glass-bg {
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+  border: transparent;
+  background-color: transparent;
+}
+
+.modern-swal {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.modern-swal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 12px;
+}
+
+.modern-swal-content {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.modern-swal-button {
+  cursor: pointer;
+  width: 120px;
+  margin: 0 8px;
+  padding: 8px 18px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.modern-swal-button.confirm-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modern-swal-button.cancel-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.modern-swal-button.confirm-button:hover {
+  background-color: #45a049;
+}
+
+.modern-swal-button.cancel-button:hover {
+  background-color: #e53935;
+}
+
+/* Hide number input arrows globally */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

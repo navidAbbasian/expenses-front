@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  expenses_front:
+    container_name: expenses_front
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - .:/app
+      - /app/.next
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    restart: always
